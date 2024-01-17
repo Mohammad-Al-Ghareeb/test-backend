@@ -1,7 +1,8 @@
-const express = require('express');
-const connectToDb = require('./config/connectToDB');
+const express = require("express");
+const connectToDb = require("./config/connectToDB");
 const { errorHandler, notFound } = require("./middlewares/error");
-require('dotenv').config();
+require("dotenv").config();
+const cors = require("cors");
 
 // Connection To Db
 connectToDb();
@@ -10,7 +11,7 @@ connectToDb();
 const app = express();
 
 // Middlewares
-app.use(express.json())
+app.use(express.json());
 
 // Eroor Handler MIddleware
 app.use(notFound);
